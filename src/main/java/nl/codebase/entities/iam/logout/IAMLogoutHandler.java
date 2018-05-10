@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.Arrays;
 
+import static nl.codebase.entities.common.FaceterConstants.AUTHENTICATED_COOKIE_NAME;
 import static nl.codebase.entities.common.FaceterConstants.PARAM_ACCESS_TOKEN;
 import static nl.codebase.entities.common.FaceterConstants.PARAM_REFRESH_TOKEN;
 
@@ -34,6 +35,7 @@ public class IAMLogoutHandler implements LogoutHandler {
     public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         response.addCookie(createImmediatelyExpiringCookie(PARAM_REFRESH_TOKEN));
         response.addCookie(createImmediatelyExpiringCookie(PARAM_ACCESS_TOKEN));
+        response.addCookie(createImmediatelyExpiringCookie(AUTHENTICATED_COOKIE_NAME));
 
         Cookie[] cookies = request.getCookies();
         Arrays.stream(cookies)
