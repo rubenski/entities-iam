@@ -49,9 +49,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>nl.codebase</groupId>
-			<artifactId>common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>nl.codebase.entities</groupId>
+			<artifactId>entities-common</artifactId>
 		</dependency>
 	</dependencies>
 

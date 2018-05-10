@@ -1,7 +1,7 @@
 package nl.codebase.entities.iam.logout;
 
 import lombok.extern.slf4j.Slf4j;
-import nl.codebase.faceter.common.token.TokenService;
+import nl.codebase.entities.common.token.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.Arrays;
 
-import static nl.codebase.faceter.common.FaceterConstants.PARAM_ACCESS_TOKEN;
-import static nl.codebase.faceter.common.FaceterConstants.PARAM_REFRESH_TOKEN;
+import static nl.codebase.entities.common.FaceterConstants.PARAM_ACCESS_TOKEN;
+import static nl.codebase.entities.common.FaceterConstants.PARAM_REFRESH_TOKEN;
 
 /**
  * Adds access and refresh tokens to logged_out_tokens table and removes cookies
