@@ -52,6 +52,10 @@
 			<groupId>nl.codebase.entities</groupId>
 			<artifactId>entities-common</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.squareup.okhttp</groupId>
+			<artifactId>okhttp</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
