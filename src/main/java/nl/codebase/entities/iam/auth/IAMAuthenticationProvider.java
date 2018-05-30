@@ -1,4 +1,4 @@
-package nl.codebase.entities.iam;
+package nl.codebase.entities.iam.auth;
 
 import nl.codebase.entities.iam.account.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;

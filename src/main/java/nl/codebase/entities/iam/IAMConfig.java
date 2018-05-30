@@ -17,7 +17,7 @@ public class IAMConfig {
 
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        JwtAccessTokenConverter converter = new IAMAccessTokenConverter();
         converter.setSigningKey(signingKey);
         return converter;
     }
