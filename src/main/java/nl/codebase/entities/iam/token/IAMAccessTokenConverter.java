@@ -1,4 +1,4 @@
-package nl.codebase.entities.iam;
+package nl.codebase.entities.iam.token;
 
 import nl.codebase.entities.iam.account.IAMAccount;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
@@ -20,7 +20,6 @@ public class IAMAccessTokenConverter extends JwtAccessTokenConverter {
 
         extraInfo.put("account", account);
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(extraInfo);
-
         return super.enhance(accessToken, authentication);
     }
 }

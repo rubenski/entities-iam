@@ -2,6 +2,7 @@ package nl.codebase.entities.iam;
 
 import lombok.extern.slf4j.Slf4j;
 import nl.codebase.entities.iam.exception.IAMResponseExceptionTranslator;
+import nl.codebase.entities.iam.token.IAMAccessTokenConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -85,9 +86,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
-        enhancerChain.setTokenEnhancers(Arrays.asList(accessTokenConverter, iamAccessTokenConverter));
+        enhancerChain.setTokenEnhancers(Arrays.asList(iamAccessTokenConverter));
         endpoints.tokenStore(tokenStore())
-                .accessTokenConverter(accessTokenConverter)
+                //.accessTokenConverter(accessTokenConverter)
                 .tokenEnhancer(enhancerChain)
                 .authenticationManager(authenticationManager)
                 .exceptionTranslator(new IAMResponseExceptionTranslator());
