@@ -13,4 +13,12 @@ public class IamApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void byteToChar() {
+		char[] chars = "XY7kmzoNzl100".toCharArray();
+		for (char aChar : chars) {
+			byte b = (byte) aChar;
+		}
+	}
+
 }
