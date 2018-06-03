@@ -60,4 +60,9 @@ public class IAMAccount extends Account implements UserDetails {
     public boolean isEnabled() {
         return enabled;
     }
+
+    // Grants don't have to end up separately again in the token..
+    public void clearGrants() {
+        grants = null;
+    }
 }

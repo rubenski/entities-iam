@@ -16,10 +16,11 @@ public class IAMAccessTokenConverter extends JwtAccessTokenConverter {
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
 
         IAMAccount account = (IAMAccount) authentication.getPrincipal();
+        account.clearGrants();
         Map<String, Object> extraInfo = new HashMap<>();
-
         extraInfo.put("account", account);
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(extraInfo);
+
         return super.enhance(accessToken, authentication);
     }
 }
